@@ -5,7 +5,7 @@ import (
 	"math"
 )
 
-//Convert the spcified currency to EUR; Returns (-)infinite float64 if currency doesn't exist,
+//Convert the specified currency to EUR; Returns (-)infinite float64 if currency doesn't exist,
 func ConvertToEUR(currency string, value float64) (float64) {
 	return value / GetRate(currency)
 }
@@ -32,7 +32,7 @@ func IsNumberValid(value float64) (bool) {
 
 //Return the rate of a currency; Returns default float64 if it can't find the currency
 func GetRate(currency string) (float64) {
-	RefrashIfRequired()
+	RefreshIfRequired()
 	rate, _:= ExchangeRates[currency]
 	return rate
 }

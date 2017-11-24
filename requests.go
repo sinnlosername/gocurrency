@@ -19,10 +19,10 @@ var (
 )
 
 func init() {
-	ExchangeRates["EUR"] = 1 //EUR doesn't exist by default, because values are relativ to EUR
+	ExchangeRates["EUR"] = 1 //EUR doesn't exist by default, because values are relative to EUR
 }
 
-func RefrashRates() {
+func RefreshRates() {
 	resp, err := http.Get(RatesSource)
 
 	defer func() {
@@ -49,9 +49,9 @@ func RefrashRates() {
 	CacheTime = time.Now()
 }
 
-func RefrashIfRequired() {
+func RefreshIfRequired() {
 	if CacheTime.Add(CacheExpire).Before(time.Now()) {
-		RefrashRates()
+		RefreshRates()
 	}
 }
 
