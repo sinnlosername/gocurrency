@@ -10,7 +10,7 @@ import (
 
 const (
 	RatesSource = "http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml"
-	CacheExpire = time.Hour * 24 * 7
+	CacheExpire = time.Hour * 4
 )
 
 var (
